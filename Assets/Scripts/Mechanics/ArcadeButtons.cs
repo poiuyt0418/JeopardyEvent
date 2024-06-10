@@ -117,7 +117,7 @@ public class ArcadeButtons : MonoBehaviour
 
     public void WrongAnswer()
     {
-        QuestionManager.Instance.QuestionWrongBackground();
+        //QuestionManager.Instance.QuestionWrongBackground();
         if (wrongSound != null)
         {
             QuestionManager.Instance.PlaySound(wrongSound);

@@ -185,13 +185,18 @@ public class QuestionManager : MonoBehaviour
 
     public void TimeQuestion()
     {
+        if (coroutineRunning)
+        {
+            StopCoroutine(coroutine);
+            coroutineRunning = false;
+        }
         coroutine = StartCoroutine(Timer());
     }
 
     public IEnumerator Timer()
     {
         coroutineRunning = true;
-        for (int i = 0; i < timerDuration; i++)
+        for (int i = 0; i < timerDuration+1; i++)
         {
             timer.text = (timerDuration - i).ToString();
             gmTimer.text = (timerDuration - i).ToString();
